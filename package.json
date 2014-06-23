@@ -6,5 +6,7 @@
   "authors": [
     "Saneyuki Tadokoro"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "spec-d": ">= 0.0.1"
+  }
 }

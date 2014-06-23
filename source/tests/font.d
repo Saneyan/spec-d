@@ -17,17 +17,25 @@ static this()
   spec.test((describe) {
     describe("Test console colors", (it) {
       it("shold colorize all colors.", {
-        logln!(defaultColor)("default");
-        logln!(color.black)("black");
-        logln!(color.blue)("blue");
-        logln!(color.green)("green");
-        logln!(color.red)("red");
+        string c = "▓";
+
+        log!(color.white)(c);
+        log!(color.cyan)(c);
+        log!(color.purple)(c);
+        log!(color.blue)(c);
+        log!(color.green)(c);
+        log!(color.red)(c);
+        log!(color.gray)(c);
+        log!(color.black)(c);
+        logln!(defaultColor)(c);
       });
 
       it("shold set all styles.", {
-        logln!(defaultStyle)("default");
-        logln!(style.plain)("plain");
-        logln!(style.bold)("bold");
+        string c = "F";
+
+        log!(defaultStyle)(c);
+        log!(style.plain)(c);
+        logln!(style.bold)(c);
       });
     });
   });
