@@ -3,4 +3,4 @@ spec-d
 
 Test framework for D
 
-![example](https://www.wuala.com/Saneyan/Public/?key=eCT1Ia3CEVXe)
+![example](https://raw.github.com/wiki/Saneyan/spec-d/specdexample.png)
