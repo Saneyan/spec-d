@@ -10,7 +10,7 @@ import spec;
 import console.stdio;
 import console.font;
 
-static this()
+unittest
 {
   Spec spec = new Spec(__MODULE__, __FILE__);
 
