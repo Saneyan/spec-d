@@ -61,7 +61,7 @@ class Spec
   {
     _count++;
 
-    logln!(color.green)(indent!(3)(desc));
+    logln!(color.black)(indent!(3)(desc));
 
     try {
       lambda();
@@ -81,7 +81,7 @@ class Spec
    */
   void describe(string desc, DescribeLambda lambda)
   {
-    logln!(color.green)(indent!(1)(desc));
+    logfln!(style.bold)(indent!(1)(desc));
     lambda(&this.it);
   }
 
@@ -108,7 +108,7 @@ class Spec
   void test(TestLambda lambda)
   {
     if (!_started) {
-      logln!(color.black)("\nStarting to test...\n");
+      logln!(color.black)("\nStarting unit tests...\n");
       _started = true;
     }
 
@@ -117,9 +117,11 @@ class Spec
     lambda(&this.describe);
 
     // If an error occured, another test must be continued to find out whole process.
-    if (_failure > 0)
+    if (_failure > 0) {
       logfln!(style.bold, color.red)("\n × [ %d of %d tests failed ]\n", _failure, _count);
-    else
+      throw new Exception("Errors occured.");
+    } else {
       logfln!(color.green)("\n ✓ [ %d tests passed ]\n", _count);
+    }
   }
 }

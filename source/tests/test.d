@@ -8,8 +8,3 @@ module tests.test;
 
 import tests.font;
 import tests.math;
-
-int main()
-{
-  return 0;
-}
