@@ -20,7 +20,7 @@ class Sieve
   public static pure nothrow int[] getPrimeNumbers(int max)
   {
     int i, j, t;
-    int remain = max;
+    int remain = max - 2;
     bool[] omits = new bool[max];
     float square = secantMethod!(x => x * x - max)(0, max);
 
@@ -34,7 +34,7 @@ class Sieve
 
     int[] numbers = new int[remain];
 
-    for (i = 0, j = 0; i < max; i++)
+    for (i = 2, j = 0; i < max; i++)
       if (omits[i] == false) numbers[j++] = i;
 
     return numbers;
@@ -57,7 +57,7 @@ unittest
         int[] result = Sieve.getPrimeNumbers(200);
 
         assert(result == [
-          0, 1, 2, 3, 5, 7, 11, 13,
+          2, 3, 5, 7, 11, 13,
           17, 19, 23, 29, 31, 37, 41, 43,
           47, 53, 59, 61, 67, 71, 73, 79,
           83, 89, 97, 101, 103, 107, 109, 113,
